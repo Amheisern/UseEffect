@@ -11,7 +11,11 @@ export function App() {
     },
     [count]
   )
-
+  // If we need to do something just once when the component first mounts
+  // we can provide an empty change list and useEffect will only run once.
+  useEffect(function () {
+    console.log(`This runs once when the component first mounts`)
+  }, [])
   function handleClickButton() {
     setCount(count + 1)
   }
